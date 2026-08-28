@@ -1,0 +1,39 @@
+# Compiled Object files
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Code::Blocks
+bin/
+obj/
+*.depend
+*.layout
+*.cbp.user
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Output/Build
+*.out
+Debug/
+Release/
+*.a
+*.lib
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# OS
+Thumbs.db
+.DS_Store
+*.suo
