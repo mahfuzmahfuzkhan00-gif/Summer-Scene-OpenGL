@@ -112,6 +112,37 @@ void summerDrawSun()
     glEnd();
 }
 
+// ============ TAIYEBA ENHANCEMENT ============
+void summerEnhanceTaiyeba()
+{
+    // Enhanced sun with multiple glow layers for better brightness effect
+    float radius = 4.0f;
+    int segments = 30;
+    
+    // Outer glow (dim)
+    glColor4f(summerSunBrightness, summerSunBrightness * 0.4f, 0.0f, 0.3f);
+    glBegin(GL_LINE_LOOP);
+    for (int i = 0; i < segments; i++) {
+        float angle = 2.0f * 3.14159f * i / segments;
+        float x = summerSunX + radius * cos(angle);
+        float y = summerSunY + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    
+    // Middle glow layer
+    glColor4f(summerSunBrightness * 0.9f, summerSunBrightness * 0.7f, 0.0f, 0.4f);
+    radius = 3.5f;
+    glBegin(GL_LINE_LOOP);
+    for (int i = 0; i < segments; i++) {
+        float angle = 2.0f * 3.14159f * i / segments;
+        float x = summerSunX + radius * cos(angle);
+        float y = summerSunY + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+}
+
 void summerDrawCloud(float cloudX, float cloudY)
 {
     glColor3f(1.0f, 1.0f, 1.0f);
@@ -565,6 +596,7 @@ void display()
     summerDrawHills();
     summerDrawClouds();
     summerDrawSun();
+    summerEnhanceTaiyeba();  // ← TAIYEBA'S ENHANCEMENT
     summerDrawTrees();
     summerDrawRuralHouse();
     summerDrawRiver();
